@@ -32,11 +32,12 @@ Field `type` was removed from object type `Organization`
 
 ### Expected Behavior
 
-[What should happen?]
+When a GraphQL Schema is updated with breaking changes, it should send an alert via Discord to the API maintainer.
 
 ### Current Behavior
 
-[What actually happens?]
+Currently, alerts and notifications are only supported for Slack and Teams.
+https://the-guild.dev/graphql/hive/docs/schema-registry/management/projects
 
 ### Affected Components
 
