@@ -1,15 +1,21 @@
-# Contribution [#]: [Issue Title]
+# Contribution 1: Support Discord as a first-class notification/alert target
 
-**Contribution Number:** [1 / 2 / 3]  
-**Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Contribution Number:** 1
+**Student:** Ben Klein
+**Issue:** https://github.com/graphql-hive/console/issues/130
+**Status:** Phase 1
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+I chose issue #130 because it fits with my existing TS/JS experience, and will push my understanding forward just the right amount for a first issue. The issue seems like a great first issue as there is already Teams and Slack integration so it should be straight forward to follow that model to build a Discord integration.
+
+I'm interested in this issue because:
+s
+
+1. I've done a lot of web development work but haven't used GraphQL yet and I want to learn a bit more about it.
+2. There is already a model for alerts with other platforms.
 
 ---
 
@@ -17,7 +23,13 @@
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+There are already alert/notification integrations for GraphQL Hive on Slack and Teams. The goal of this issue is to add integration for Discord. For example a notification for Discord for a GraphQL Hive user might look like
+
+```
+I found 1 change in project GraphQL Hive, target production (view details):
+Breaking Changes
+Field `type` was removed from object type `Organization`
+```
 
 ### Expected Behavior
 
