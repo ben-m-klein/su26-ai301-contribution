@@ -257,36 +257,53 @@ Using UMPIRE framework (adapted):
 
 ### Unit Tests
 
-- [ ] Test case 1: [Description]
-- [ ] Test case 2: [Description]
-- [ ] Test case 3: [Description]
+Added and ran Discord adapter tests covering:
+
+- schema change notification payloads
+- channel confirmation payloads
+- Discord embed formatting and truncation behavior
+  Also reran the existing MS Teams webhook adapter tests to confirm the shared webhook-style behavior still passes.
 
 ### Integration Tests
 
-- [ ] Integration scenario 1
-- [ ] Integration scenario 2
+Ran the relevant project checks:
+
+- `pnpm graphql:generate`
+- `pnpm --filter @hive/app typecheck`
+- `pnpm --filter @hive/workflows typecheck`
+- `pnpm exec vitest run packages/services/api/src/modules/alerts/providers/adapters/discord.spec.ts packages/services/api/src/modules/alerts/providers/adapters/msteams.spec.ts`
+  Result: all checks passed.
 
 ### Manual Testing
 
-[What you tested manually and results]
+Created a Discord Webhook alert channel in the local Hive UI. The confirmation message was delivered successfully to Discord. See the note doc for screenshots: https://docs.google.com/document/d/14UF1k0HbEYe6rdaET3-WEkJYu0XVz0TtVClU0Y7eShw/edit?usp=sharing
+
+Created a schema change notification alert for the `development` target using the Discord channel. Published schema changes through the local Hive CLI and verified Discord received:
+
+- a breaking schema change notification
+- a safe schema change notification
 
 ---
 
 ## Implementation Notes
 
-### Week [X] Progress
+### Week 3 Progress
 
-[What you built this week, challenges faced, decisions made]
-
-### Week [Y] Progress
-
-[Continue documenting as you work]
+Implemented Discord as a alert channel type for GraphQL Hive. Added database/storage/API support for the `DISCORD_WEBHOOK` channel type, exposed it through GraphQL, created a Discord webhook adapter, routed schema-change and metric-alert notifications to Discord, and added UI support for creating Discord webhook channels.
+Challenges included understanding the existing alerts architecture, especially how resolvers, providers, adapters, and workflow tasks interact. Local Docker also required troubleshooting due to a Docker Desktop port-forwarding issue with Kafka/Redpanda.
 
 ### Code Changes
 
-- **Files modified:** [List]
-- **Key commits:** [Links to important commits]
-- **Approach decisions:** [Why you chose certain approaches]
+- **Files modified:** migrations, storage alert channel types, alerts GraphQL schema/resolvers, Discord notification adapter and tests, alert manager routing, workflow metric alert notifier, and alert channel UI components.
+- **Key commits:**
+    - `762ac4efb` Add Discord webhook alert channel migration
+    - `aa3a51878` Support Discord webhook alert channel type
+    - `0847e1572` Add Discord webhook GraphQL channel type
+    - `4c8e5afae` Add Discord webhook notification adapter
+    - `0589218aa` Route alert notifications to Discord webhooks
+    - `57f215b51` Route metric alerts to Discord webhooks
+    - `a64836251` Add Discord webhook option to alert channel UI
+- **Approach decisions:** Followed the existing MS Teams webhook pattern where possible, while formatting Discord messages with Discord webhook embeds. Added Discord as a webhook-like channel in the UI because it uses a webhook endpoint, but kept it as a distinct channel type so alerts can be formatted specifically for Discord.
 
 ---
 
