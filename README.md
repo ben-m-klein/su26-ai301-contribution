@@ -3,7 +3,7 @@
 **Contribution Number:** 1
 **Student:** Ben Klein
 **Issue:** https://github.com/graphql-hive/console/issues/130
-**Status:** Phase 1 Complete
+**Status:** Phase 4 Complete
 
 ---
 
@@ -309,16 +309,35 @@ Challenges included understanding the existing alerts architecture, especially h
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when submitted]
+**PR Link:** https://github.com/graphql-hive/console/pull/8184
 
-**PR Description:** [Draft or final PR description - much of the content above can be adapted]
+**PR Description:**
+
+This is closing issue #130.
+
+Hive supports generic webhooks and Slack/MS Teams alerts, but Discord alerts currently don't work with the generic webhook. This PR adds a Discord compatible webhook option.
+
+Description
+The implementation pattern matches the existing MS Teams alerts:
+
+Adds DISCORD_WEBHOOK channel type
+Uses discord specific webhook formatting for confirmations and alert notifications
+UI drop down option added in alerts section
+Adapter tests included.
+Checklist
+Input validation
+Output encoding
+Error handling and logging
+Testing
 
 **Maintainer Feedback:**
+
+Feedback pending.
 
 - [Date]: [Summary of feedback received]
 - [Date]: [How you addressed it]
 
-**Status:** [Awaiting review / Iterating / Approved / Merged]
+**Status:** Awaiting review
 
 ---
 
@@ -326,20 +345,19 @@ Challenges included understanding the existing alerts architecture, especially h
 
 ### Technical Skills Gained
 
-[What you learned technically]
+I learned some things about how webhooks work in different applications, and learned what kind of patterns to expect for adding new adapters into existing codebases.
 
 ### Challenges Overcome
 
-[What was hard and how you solved it]
+Getting the local environment to work was a little tricky in some spots, but it just took some troubleshooting with help from AI. Mainly issues around docker and stale processes not being ended.
 
 ### What I'd Do Differently Next Time
 
-[Reflection on your process]
+I think maybe choosing a more recent issue would be good, this issue was a bit old and was ignored for a long time so I'm not sure how active the attention is on this.
 
 ---
 
 ## Resources Used
 
-- [Link to helpful documentation]
-- [Tutorial or Stack Overflow post that helped]
-- [GitHub issues or discussions that helped]
+- https://the-guild.dev/graphql/hive/docs/schema-registry/contributing
+- https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
