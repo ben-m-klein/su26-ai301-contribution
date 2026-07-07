@@ -3,7 +3,7 @@
 **Contribution Number:** 1
 **Student:** Ben Klein
 **Issue:** https://github.com/graphql-hive/console/issues/130
-**Status:** Phase 4 Complete
+**Status:** Phase 4 Complete (In process of iteration before the merge)
 
 ---
 
@@ -334,8 +334,7 @@ Testing
 
 Feedback pending.
 
-- [Date]: [Summary of feedback received]
-- [Date]: [How you addressed it]
+- 7/6/2026: Recieved feedback from jonathanawesome: there was a missing preview window for a feature that is currently hidden under a flag, I needed to enable the flag and add the preview window. Also a minor change: added a fallback for a missing 'Commit' field. See the reply here for more info: https://github.com/graphql-hive/console/pull/8184
 
 **Status:** Awaiting review
 
@@ -361,3 +360,5 @@ I think maybe choosing a more recent issue would be good, this issue was a bit o
 
 - https://the-guild.dev/graphql/hive/docs/schema-registry/contributing
 - https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+
+7/6/2026 Update: currently wrapping up iterations on the PR. Next week I'll choose a new issue to work on.
