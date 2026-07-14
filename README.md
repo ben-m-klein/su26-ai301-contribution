@@ -2,13 +2,22 @@
 
 **Contribution Number:** 1
 **Student:** Ben Klein
-**Issue:** https://github.com/graphql-hive/console/issues/130
-**Status:** Phase 4 Complete (In process of iteration before the merge)
+**Issue:** 1: https://github.com/graphql-hive/console/issues/130
+2: https://github.com/graphql-hive/console/issues/8098
+**Status:** 
+Issue 1: Phase 4 Complete (In review process before merge)
+Issue 2: Phase 1 Complete
 
 ---
 
 ## Why I Chose This Issue
 
+### Issue 2:
+"UI notification/alert for projects on legacy composition"
+I chose issue #8098 because it's a recent issue that is similar to my first issue, so building upon the foundation of understanding that I already have.
+
+
+### Issue 1:
 I chose issue #130 because it fits with my existing TS/JS experience, and will push my understanding forward just the right amount for a first issue. The issue seems like a great first issue as there is already Teams and Slack integration so it should be straight forward to follow that model to build a Discord integration.
 
 I'm interested in this issue because:
